@@ -2,6 +2,7 @@
   "name": "atdgen-workshop-starter",
   "version": "0.1.0",
   "scripts": {
+    "atdgen":"node bin/atdgen.js -t shared/refdomains.atd && node bin/atdgen.js -bs shared/refdomains.atd",
     "format": "find . -iname '*.re' | grep -v node_modules | xargs bsrefmt --in-place && find . -iname '*.rei' | grep -v node_modules  | xargs bsrefmt -i true --in-place",
     "build": "bsb -make-world",
     "start": "bsb -make-world -w -ws _ ",

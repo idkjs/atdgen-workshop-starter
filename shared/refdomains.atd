@@ -1,9 +1,12 @@
+(* 1. Change `lastVisited` from `string` to `date`. You will have to use the ["custom wrappers"](https://atd.readthedocs.io/en/latest/atdgen.html?highlight=wrap#using-a-custom-wrapper) feature from atdgen. *)
+type string2date = string wrap <ocaml t="Js.Date.t" wrap="Js.Date.fromString" unwrap="Js.Date.toString">
+
 type refdomain = {
   refdomain: string;
   backlinks: int;
   refpages: int;
-  first_seen: string;
-  last_visited: string;
+  first_seen: string2date;
+  last_visited: string2date;
   domain_rating: int;
 }
 
