@@ -69,8 +69,8 @@ let make = () => {
              <tr key={item.refdomain}>
                <td> {s(item.refdomain)} </td>
                <td> {s(string_of_int(item.backlinks))} </td>
-               <td> {s(Wrap.DomainRating.show(item.domain_rating))} </td>
-               <td> {s(Js.Date.toString(item.first_seen))} </td>
+              //  <td> {s(Wrap.DomainRating.show(item.domain_rating))} </td>
+              //  <td> {s(Js.Date.toString(item.first_seen))} </td>
              </tr>
            )
          ->Belt.List.toArray
