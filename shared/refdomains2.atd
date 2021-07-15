@@ -1,0 +1,35 @@
+(* type domain_rating = int wrap <ocaml module="DomainRating.t"> *)
+                       (* exception ShouldNeverHappen
+let domain_rating =
+  function
+  | x when x <= 33 -> `Good x
+  | x when (x > 33) && (x < 66) -> `Average x
+  | x when x >= 66 -> `Good x
+  | _ -> raise ShouldNeverHappen *)
+(* module DomainRating = struct *)
+(* type domain_rating = [ `Good of int  | `Average of int  | `Poor of int ]
+let wrap =
+  function
+  | x when x <= 33 -> `Good x
+  | x when (x > 33) && (x < 66) -> `Average x
+  | x when x >= 66 -> `Good x
+   | _ -> failwith "ShouldNeverHappen"
+let unwrap = function | `Good x -> x | `Average x -> x | `Poor x -> x *)
+(* end *)
+(* type domain_rating = int wrap <ocaml t="Wrap.DomainRating.t" wrap="Wrap.DomainRating.wrap" unwrap="Wrap.DomainRating.unwrap"> *)
+
+(* type domain_rating = int wrap <ocaml module="Wrap.DomainRating"> *)
+type js_date = string wrap <ocaml t="Js.Date.t" wrap="Js.Date.fromString" unwrap="Js.Date.toString">
+
+type refdomain = {
+  refdomain: string;
+  backlinks: int;
+  refpages: int;
+  first_seen: js_date;
+  last_visited: js_date;
+  domain_rating: int;
+}
+
+type response = {
+  refdomains: refdomain list;
+}

@@ -59,8 +59,9 @@ let make = () => {
         <tr>
           <th> {s("Refdomain")} </th>
           <th> {s("Backlinks")} </th>
-          <th> {s("Domain rating")} </th>
+          // <th> {s("Domain rating")} </th>
           <th> {s("First seen")} </th>
+          <th> {s("Last Visited")} </th>
         </tr>
       </thead>
       <tbody>
@@ -69,8 +70,9 @@ let make = () => {
              <tr key={item.refdomain}>
                <td> {s(item.refdomain)} </td>
                <td> {s(string_of_int(item.backlinks))} </td>
-              //  <td> {s(Wrap.DomainRating.show(item.domain_rating))} </td>
-              //  <td> {s(Js.Date.toString(item.first_seen))} </td>
+                // <td> {s(Wrap.DomainRating.show(item.domain_rating))} </td>
+               <td> {s(Js.Date.toString(item.first_seen))} </td>
+               <td> {s(Js.Date.toString(item.last_visited))} </td>
              </tr>
            )
          ->Belt.List.toArray
