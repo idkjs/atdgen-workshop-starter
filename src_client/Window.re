@@ -3,6 +3,6 @@
 type response;
 
 // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
-[@bs.val] external fetch: string => Js.Promise.t(response);
+[@bs.val] external fetch: string => Js.Promise.t(response) = "fetch";
 // https://developer.mozilla.org/en-US/docs/Web/API/Body/json
-[@bs.send.pipe: response] external json: unit => Js.Promise.t(Js.Json.t);
+[@bs.send.pipe: response] external json: unit => Js.Promise.t(Js.Json.t) = "";
